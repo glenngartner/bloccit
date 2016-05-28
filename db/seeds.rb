@@ -1,5 +1,15 @@
 require 'random_data'
 
+# Create Questions
+50.times do
+  Question.create!(
+    title:  RandomData.random_sentence,
+    body:   RandomData.random_paragraph,
+    resolved: true
+  )
+end
+questions = Question.all
+
 # Create Posts
 50.times do
   Post.create!(
